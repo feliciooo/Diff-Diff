@@ -1,0 +1,22 @@
+<html>
+
+<head>
+ </head>
+
+ <body>
+   <script>
+    var n = prompt("Enter an integer number corresponding a circle's radius in inches:", "");
+    var n = n * n;
+    var answer = Math.PI * n;
+    alert("The circumference of a circle having " + n + " inches is: " + answer.toFixed(2));   
+
+    var r = prompt("Enter an integer number corresponding a circle's radius:", "");
+    var r = r * r;
+    var answer1 = 4 * Math.PI * r;
+    alert("The surface area of a sphere: " + answer1.toFixed(2));
+    
+
+  </script> 
+</body>
+
+</html>

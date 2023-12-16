@@ -1,0 +1,119 @@
+import java.util.Scanner;
+
+public class RunEmployee {
+
+    public static void main(String[] args) {
+        
+        Employee emp = new Employee();
+        
+        FullTimeEmployee full = new FullTimeEmployee();
+        
+        PartTimeEmployee part = new PartTimeEmployee();
+        
+        char choice;
+        
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("Enter Name: ");
+        
+        emp.setName (scan.nextLine());
+        
+        System.out.println("Enter F if Full Time or P if Part Time: ");
+        
+        choice = Character.toLowerCase(scan.next().charAt(0));
+          switch(choice)      
+              
+          { 
+              case 'p': 
+                  
+                  System.out.println("Enter rate per hour and no. of hours worked separated by space(Sample: 107.50 13): ");
+                  
+                part.setratePerHour (scan.nextDouble());
+                  
+                part.sethoursWorked  (scan.nextInt());
+                  
+                part.setwAge  (scan.nextDouble());
+                  
+                  System.out.println("Name: " + emp.name);
+                  
+                  System.out.printf("  Wage: %.2f ", part.getwAge());
+                
+                  
+               break;   
+          
+           case 'f':
+                  
+                  System.out.println("Enter Rate per Hour and Number of Hours worked per day separated by space: ");
+                  
+                  full.setratePerHour  (scan.nextDouble());
+                  
+                  full.sethoursWorked  (scan.nextInt());
+                  
+                  full.setmonthlySalary (scan.nextDouble());
+                  
+                  System.out.println("Name: " + emp.name);
+                  
+                  System.out.printf(" Monthly Salary: %.2f ", full.getmonthlySalary());
+                  
+                  break;
+    }
+}
+}       
+ class Employee{
+ 
+     String name;
+
+void setName(String _name){ name = _name;}
+
+String getName(){
+
+return name;
+
+}
+ }
+
+class FullTimeEmployee{
+
+double monthlySalary, ratePerHour;
+
+int hoursWorked;
+
+void setmonthlySalary(double _monthlySalary){ monthlySalary = _monthlySalary;}
+
+void setratePerHour (double _ratePerHour) {ratePerHour = _ratePerHour;}
+
+void sethoursWorked (int _hoursWorked) {hoursWorked = _hoursWorked;}
+
+
+double getmonthlySalary(){ 
+    
+    monthlySalary = ratePerHour * hoursWorked * 30;
+    
+    return monthlySalary;
+    
+}
+
+}
+
+class PartTimeEmployee{
+
+double ratePerHour; 
+
+int hoursWorked; 
+
+double wAge;
+
+void setwAge (double _wAge) {wAge = _wAge;}
+
+void setratePerHour (double _ratePerHour) { ratePerHour = _ratePerHour;}
+
+void sethoursWorked (int _hoursWorked) {hoursWorked = _hoursWorked;}
+
+double getwAge(){
+
+wAge = ratePerHour * hoursWorked; 
+
+return wAge;
+}
+
+}

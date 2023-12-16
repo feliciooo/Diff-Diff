@@ -1,0 +1,49 @@
+public class Lab01_Rentura {
+
+    public static void main(String[] args) {
+        
+        String Empname, EmpDepart, EmpDaysWork, EmpLossTax;
+                
+                Empname = "Rentura, John Lloyd";
+                
+                EmpLossTax = "Loss Tax: 270.00 SSS: 120.80 CA: 450.00 ";
+                
+                EmpDepart = "ICT";
+                
+                 EmpDaysWork = "22 Days Work";
+                 
+       double EmpDailyRate, EmpGrossPay, EmpNetPay;
+        
+        EmpDailyRate = 300.18;
+        
+        EmpGrossPay = 300.18 * 22;
+      
+        EmpNetPay = 300.18 * 22 - 270 - 120.80 - 450;          
+                
+        int EmpNumber = 14334;
+        
+        char EmpStatus = 'S';
+        
+        System.out.println("Employee Name: "
+        + Empname);
+        
+        System.out.println("Employee Number: " + EmpNumber);
+        
+        System.out.println("Empolyee Status: " + EmpStatus);
+        
+        System.out.println("Employee Department: " + EmpDepart);
+        
+        System.out.println("Employee's Days of Work: " + EmpDaysWork);
+        
+        System.out.println("Employee's Daily Rate: " + EmpDailyRate);
+        
+        System.out.println("Employee's Gross Pay: " + EmpGrossPay);
+        
+        System.out.println("Employee's Loss Tax: " + EmpLossTax);
+        
+        System.out.println("Employee's Net Pay: " + EmpNetPay);
+        
+        
+        
+    }
+}

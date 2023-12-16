@@ -1,0 +1,57 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class BMIProject implements ActionListener {
+
+    private JFrame frame;
+    private JTextField heightField;
+    private JTextField weightField;
+    private JLabel bmiLabel;
+    private JButton compButton;
+    
+ public BMIProject (){
+ 
+    heightField = new JTextField(6);
+    weightField = new JTextField(6);
+    compButton = new JButton ("Compute");
+    bmiLabel = new JLabel ("Type your height and weight");
+    frame = new JFrame();
+    
+    JPanel panel = new JPanel(new GridLayout(2,2));
+    panel.add(heightField);
+    panel.add(weightField);
+    panel.add(bmiLabel, BorderLayout.CENTER);
+    panel.add(compButton, BorderLayout.SOUTH);
+    
+    frame.setTitle("BMI");
+    frame.setSize(500, 500);
+    frame.add(panel);
+    frame.setVisible(true);
+    frame.pack();
+    
+    compButton.addActionListener((ActionListener) this);
+ }
+ 
+    /**
+     *
+     * @param event
+     */
+    @Override
+ public void actionPerformed (ActionEvent event){
+    
+        String heightText = heightField.getText();
+        double height = Double.parseDouble(heightText);
+        
+        String weightText = weightField.getText();
+        double weight = Double.parseDouble(weightText);
+        
+        double bmi = weight / (height * weight) * 703;
+        bmiLabel.setText("BMI: " + bmi);
+    }
+public static void main(String []args){
+ 
+     new BMIProject();
+ }
+ 
+}

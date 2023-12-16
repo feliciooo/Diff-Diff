@@ -1,0 +1,37 @@
+import java.awt.Color;
+import java.awt.FlowLayout;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class SimpleLowkey {
+
+    public static void main(String[] args) {
+      
+     JFrame myJFrame = new JFrame();
+     
+     JButton myJButton1 = new JButton();
+      myJButton1.setText("Start na bhie!!");
+      myJButton1.addActionListener((ActionListener) new MessageListener());
+      
+     JButton myJButton2 = new JButton();
+      myJButton2.setText("Dili lagi bhie!!");
+      myJButton2.addActionListener((ActionListener) new MessageListener());
+     
+        myJFrame.add(myJButton1);
+        myJFrame.add(myJButton2);
+       
+        
+        myJFrame.setVisible(true);
+        myJFrame.setSize(300, 100);
+        myJFrame.setTitle("This is mah Frame!! Cuh!!!");
+        myJFrame.setForeground(Color.BLUE);
+        myJFrame.setLocation(500, 300);
+        
+        myJFrame.setLayout(new FlowLayout());
+        myJFrame.pack();
+        myJFrame.setVisible(true);
+        
+        myJFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+}
+}

@@ -1,0 +1,49 @@
+import java.io.BufferedReader;
+ import java.io.FileReader;
+ import java.io.IOException;
+ import java.util.*;
+
+public class LabExer6A {
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        String strArr [] = new String[100];
+        String newArr [];
+        String hide;
+        String guessword;
+        Random r = new Random();
+        int count = 0;
+        
+        try{
+        
+          FileReader pathLoc = new FileReader("C:\\John Paul\\John Lloyd\\Mina\\TxT Folder\\JPandJL.txt   ");
+          
+          BufferedReader read mew BufferedReader (pathLoc);
+          
+          String word = null;
+          
+          while((word = read.readLine()) != null ) {
+          
+              strArr [count] = word;
+              ++count;
+                     
+          }
+          
+          newArr = new String [count];
+          
+          newArr = strArr; 
+          
+          hide = newArr[r.nextInt(count)];
+          
+          guessword = hide;
+          
+          for(int i =0 ; i<hide .length();  i++){
+          
+           guessword = 
+                   guessword.replace( guessword.charAt( r.nextInt( guessword.length()))), '?'
+          }
+        }
+    }
+}

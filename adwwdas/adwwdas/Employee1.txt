@@ -1,0 +1,39 @@
+class Employee {
+     int idNum;
+     String eName;
+     
+     static String Company ="TNTS";
+     
+     Employee(int id, String en){
+        
+         // i swapped VarName into parameter
+         idNum = id ;
+         eName = en;
+         
+     }
+     
+     void display(){
+         System.out.println(idNum + eName);
+         System.out.println(Company);
+     }
+     
+     //then the first static into company i make a void to change the name SMC
+//     static void change(){
+//         Company = "SMC";
+//           
+//         }
+     
+     //this is my maint method to run and basically to show the input on my code
+      public static void main(String []args ){
+//             Employee.change();
+             
+             Employee e1 = new Employee(123 , " ACE");
+             Employee e2 = new Employee (456 ," Gobrin");
+             
+             
+             //this i use display method to show the id and name of 3
+             e1.display();
+             e2.display();
+             
+      }
+     }

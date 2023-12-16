@@ -1,0 +1,40 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.FlowLayout;
+
+public class FlowLayout {
+
+    public static void main(String[] args) {
+        
+        JFrame frame = new JFrame("Flow Layout");
+   
+        JButton jB1 = new JButton("Button 1");
+        JButton jB2 = new JButton("Button 2");
+        JButton jB3 = new JButton("Button 3");
+        
+        JPanel myPanel = new JPanel(new FlowLayout());
+        
+        myPanel.add(jB1);
+        myPanel.add(jB2);
+        myPanel.add(jB3);
+        
+        myPanel.setBackground(Color.red);
+        
+        frame.add(myPanel);
+        frame.pack();
+        frame.setVisible(true);
+        
+        
+        //add
+//        frame.add(jB1);
+//        frame.add(jB2);
+//        frame.add(jB3);
+        
+        //set
+//        frame.setLayout(new FlowLayout());
+//        frame.setVisible(true);
+//        frame.setSize(300, 200);
+//        
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+}

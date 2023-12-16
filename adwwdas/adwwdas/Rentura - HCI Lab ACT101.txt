@@ -1,0 +1,26 @@
+import javax.swing.*;
+
+public class HCI_Lab_Activity {
+
+    public static void main(String[] args) {
+        
+        String AgeText;
+        
+        AgeText = JOptionPane.showInputDialog(null, "What's your age, Cowboy?");
+        
+        int Age;
+        
+        Age = Integer.parseInt(AgeText);
+        
+        if (Age <= 45){
+        
+        JOptionPane.showMessageDialog(null, "You're " + Age + " you ain't too old dawg!");
+        }
+        
+        else{
+        
+        JOptionPane.showMessageDialog(null, "You're " + Age + " you old af!");
+        }
+ 
+    }
+}

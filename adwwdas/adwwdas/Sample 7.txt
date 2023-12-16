@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class Sample7 {
+
+    public static void main(String[] args) {
+       
+        String sName, Class = " ";
+        int idNum;
+        double hCom;
+        
+        Scanner sc = new Scanner (System.in);
+        
+        do{
+        
+            System.out.println("Student's Name: ");
+            sName = sc.nextLine();
+        
+        } while (sName.length() <= 2 ||sName.length() >= 20);
+        
+       do{
+       
+            System.out.println("Student Number (234 to 537): ");
+            idNum = sc.nextInt();
+            
+       } while (idNum <= 234 || idNum >= 547);
+       
+      do{
+       
+          System.out.println("Hours Completed (0 to 250): ");
+          hCom = sc.nextDouble();
+      
+      } while (hCom <= 0 || hCom >= 250);
+              
+      if(hCom < 30) System.out.println ("Freshmen");
+      
+      if(hCom > 30 && hCom < 59.99) System.out.println( "Sophomore");
+      
+      if(hCom > 60 && hCom < 89.99) System.out.println("Junior");
+      
+      if(hCom >= 90) System.out.println("Senior");
+     
+      
+    }
+}

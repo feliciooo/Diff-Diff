@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class RunEmployee {
+
+    public static void main(String[] args) {
+        
+        Scanner scan = new Scanner (System.in);
+        
+        String name;
+        
+        String employmentStatus;
+        
+        double ratePerHour, monthlySalary, wage;
+        
+        int hoursWorked;
+        
+        char choice;
+        
+        System.out.println("Enter Name: ");
+        
+        name = scan.nextLine();
+        
+        System.out.println("Enter F if Full Time or P if Part Time: ");
+        
+        employmentStatus = scan.nextLine();
+                
+          choice = Character.toLowerCase(scan.next().charAt(0));
+          switch(choice)      
+          {
+              case 'p': 
+                  
+                  System.out.println("Enter rate per hour and no. of hours worked separated by space: ");
+                  
+                  ratePerHour = scan.nextDouble();
+                  
+                  hoursWorked = scan.nextInt();
+                  
+                  wage = ratePerHour * hoursWorked;
+                  
+                  System.out.println("Name: " + name);
+                  
+                  System.out.println(" Wage: " + wage);
+                
+                  
+               break;   
+               
+              case 'f':
+                  
+                  System.out.println("Enter Minimum Wage and Number of Hours worked separated by space: ");
+                  
+                  ratePerHour = scan.nextDouble();
+                  
+                  hoursWorked = scan.nextInt();
+                  
+                  monthlySalary = ratePerHour * hoursWorked * 30;
+                  
+                  System.out.println("Name: " + name);
+                  
+                  System.out.println(" Monthly Salary: "+ monthlySalary);
+                  
+                  break;
+    }
+}
+}       

@@ -1,0 +1,84 @@
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import java.util.Collections;
+import javax.swing.JTree;
+import javax.swing.SwingUtilities;
+import javax.swing.tree.DefaultMutableTreeNode;
+
+
+public class TreeProject_Rentura extends JFrame{
+
+   JTree tree;
+   
+   public TreeProject_Rentura(){
+   
+    DefaultMutableTreeNode parentTop = new DefaultMutableTreeNode ("html");
+    
+    DefaultMutableTreeNode childN1 = new DefaultMutableTreeNode ("head");
+    DefaultMutableTreeNode sub1 = new DefaultMutableTreeNode ("meta");
+    DefaultMutableTreeNode sub2 = new DefaultMutableTreeNode ("title");
+    
+    childN1.add(sub1);
+    childN1.add(sub2);
+    
+    DefaultMutableTreeNode childN2 = new DefaultMutableTreeNode ("body");
+    DefaultMutableTreeNode sub3 = new DefaultMutableTreeNode ("ul");
+    DefaultMutableTreeNode sub6 = new DefaultMutableTreeNode ("h1");
+    DefaultMutableTreeNode sub7 = new DefaultMutableTreeNode ("h2");
+    DefaultMutableTreeNode sub8 = new DefaultMutableTreeNode ("a");
+    
+    childN2.add(sub3);
+    childN2.add(sub6);
+    childN2.add(sub7);
+    
+    sub7.add(sub8);
+    
+    DefaultMutableTreeNode sub4 = new DefaultMutableTreeNode ("li");
+    DefaultMutableTreeNode sub5 = new DefaultMutableTreeNode ("li");
+    
+    sub3.add(sub4);
+    sub3.add(sub5);
+        
+    parentTop.add(childN1);
+    parentTop.add(childN2);
+    
+    tree = new JTree(parentTop);
+    
+    JScrollPane treeView = new JScrollPane(tree);
+    this.add(treeView);
+    
+    this.setTitle("Java Tree");
+    this.setSize(450, 450);
+    
+    this.setVisible(true);    
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
+    System.out.println("4.1 Root Node: \n *html");
+    System.out.println("4.2 Parent Nodes: \n *html / head / body / ul / h2 ");
+    System.out.println("4.3 Siblings: \n *meta / title \n *head / body \n *li / li \n *ul / h1 / h2");
+    System.out.println("4.4 One - Level Subtrees: \n *html - head / body \n *head - meta / title \n *body - ul / h1 / h2 \n *ul - li / li \n *h2 - a");
+    System.out.println("4.5 Nodes per Level: \n Level 0 - html \n Level 1 - head / body \n Level 2 - meta / title / ul / h1 / h2 \n Level 3 - li / li / a " );
+    System.out.println("4.6 Depth: *3 " );
+    System.out.println("4.7 Degree of each One - level Subtrees: \n Subtree html - 2 \n Subtree head - 2 \n Subtree body - 3 \n Subtree ul - 2 \n Subtree h2 - 1 " );
+    System.out.println("4.8 List of Nodes based on Breadth - First: \n html / head / body / meta / title / ul / h1 / h2 / li / li / a " );
+    System.out.println("4.8 List of Nodes based on Pre - Order: \n html / head / meta / title / body / ul / li / li / h1 / h2 / a " );
+    System.out.println("4.8 List of Nodes based on Post - Order: \n meta / title / head / li / li / ul / body / h1 / a / h2 / html  " );
+    
+   
+   }
+   
+   public static void main(String []args){
+       
+   
+   SwingUtilities.invokeLater(new Runnable(){
+       
+            @Override
+            
+            public void run() {
+            new TreeProject_Rentura();
+            }
+            
+   });
+   
+}
+}

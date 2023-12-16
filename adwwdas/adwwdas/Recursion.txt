@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class RenturaRecur {
+    
+  public static void display_num(int ren) {
+      
+        if (ren >= 1) {
+            
+            display_num(ren - 1);
+            System.out.println(ren);
+        }
+  }
+  public static void main (String[] args) {
+      
+    Scanner scanner = new Scanner(System.in);
+        try {
+            
+            System.out.print("Enter the maximum number: ");
+            
+            int tura = scanner.nextInt();
+            
+            if (tura < 1) {
+                
+                System.out.println("Please enter a positive integer.");
+            } else {
+                display_num(tura);
+            }
+            
+        } catch (java.util.InputMismatchException e) {
+            System.out.println("Invalid input. Please enter a valid integer.");
+        }
+  }
+}

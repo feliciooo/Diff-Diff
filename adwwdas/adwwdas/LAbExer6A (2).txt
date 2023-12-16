@@ -1,0 +1,106 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.*;
+
+public class LabExer6A {
+     
+    public static void main(String[] args) {
+          
+        Scanner sc = new Scanner(System.in);
+            
+        String strArr[] = new String[100];
+            String newArr[];
+            String hide;
+            String guessword;
+             
+            Random r = new Random();
+            int count = 0;
+ 
+            try {
+
+                FileReader pathLoc = new FileReader("C:\\\\Users\\\\user\\\\Desktop\\\\New folder\\\\minba\\\\jjj.txt");
+                BufferedReader read = new BufferedReader(pathLoc);
+                String word = null;
+
+                while((word=read.readLine()) != null) {
+                  strArr[count] = word;
+                    ++count;
+                 }
+
+                newArr = new String[count];
+                newArr = strArr;
+                hide = newArr[r.nextInt(count)];
+                guessword = hide;
+
+                for (int i=0; i<hide.length(); i++) {
+                   guessword =
+                     guessword.replace(guessword.charAt(r.nextInt(guessword.length())), '?');
+                    }
+
+                boolean isTrue = true;
+
+                boolean single = false;
+
+                System.out.println("Welcome to Guessing Game!");
+
+                do {
+                    
+                    System.out.println("\nWord: " + guessword.toLowerCase());
+
+                    System.out.print("Enter word: ");
+
+                    String enter = sc.nextLine();
+
+                    if (enter.length() > 1) {
+
+                        if (enter.equalsIgnoreCase (hide)) {
+
+                            System.out.print("Congratulations! You got it right.");
+
+                            break;
+                            }
+
+                        
+                        else {
+
+                            System.out.print("Wrong answer! Please try again.\n\n");
+
+                        }
+
+                    }
+
+                    else {
+
+                        single = false;
+
+                        for (int i=0; i<hide.length(); i++) {
+
+                            if(enter.equalsIgnoreCase(String.valueOf(hide.charAt(i)))) {
+  
+                                guessword = guessword.substring(0, i) +
+
+                                        enter + guessword.substring(i+1);
+
+                                single = false;
+
+                            }
+
+                        }
+
+                    }
+
+                }
+                
+                while(isTrue);
+
+            }
+            
+            catch (IOException e) {
+
+                System.out.println("found error!");
+                
+            }
+
+    }
+}

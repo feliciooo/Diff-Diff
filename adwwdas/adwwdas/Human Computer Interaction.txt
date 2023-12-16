@@ -1,0 +1,89 @@
+import javax.swing.*;
+
+public class HCI_Lab01 {
+
+    public static void main(String[] args) {
+        
+        String name;
+        
+        int choice;
+        
+       name = JOptionPane.showInputDialog(null, "What is your name?");
+        
+        choice = JOptionPane.showConfirmDialog(null, "Do you like cake, " + name);
+        
+        if(choice == JOptionPane.YES_OPTION){
+        
+            JOptionPane.showMessageDialog(null, "Of course! Who doesn't!");
+        }   
+        else{ 
+            
+            JOptionPane.showMessageDialog(null, "We'll have to agree to disagree");
+        }
+        
+        
+            
+            
+        }
+        
+        
+    }
+}
+
+
+
+import javax.swing.*;
+
+public class HCI_Lab03 {
+
+    public static void main(String[] args) {
+       
+        String AgeText;
+        
+        AgeText = JOptionPane.showInputDialog(null, "How old are you?");
+        
+        int Age;
+        
+        Age = Integer.parseInt(AgeText);
+        
+        String MoneyTest;
+        
+        MoneyTest = JOptionPane.showInputDialog(null, "How much money do you have? ");
+        
+        double Money;
+        
+        Money = Double.parseDouble(MoneyTest);
+        
+        JOptionPane.showMessageDialog(null, "If you can double your money each year,\n" + "you'll have " + (Money + 32) + "$ at age " + (Age + 3));
+                
+        
+    }
+}
+
+
+import javax.swing.*;
+
+public class HCI_Lab_Activity {
+
+    public static void main(String[] args) {
+        
+        String AgeText;
+        
+        AgeText = JOptionPane.showInputDialog(null, "What's your age, Cowboy?");
+        
+        int Age;
+        
+        Age = Integer.parseInt(AgeText);
+        
+        if (Age <= 45){
+        
+        JOptionPane.showMessageDialog(null, "You're " + Age + " you ain't too old dawg!");
+        }
+        
+        else{
+        
+        JOptionPane.showMessageDialog(null, "You're " + Age + " you old af!");
+        }
+ 
+    }
+}

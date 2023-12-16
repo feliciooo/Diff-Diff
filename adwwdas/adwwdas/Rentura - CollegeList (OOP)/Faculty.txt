@@ -1,0 +1,32 @@
+public class Faculty {
+    
+    private String status;
+    
+
+    public void isRegular(String status){
+        
+            this.status = status;
+        }
+    
+    public String getStatus (){
+    
+        return status;
+    }
+    
+    public void facDisplay(){
+        
+       if("Y".equals(status)){
+        
+            System.out.println("Status: Faculty member is regular/tenured");
+            
+        }
+        
+        if("N".equals(status)){
+            
+            System.out.println("Status: Faculty member is not regular");
+            
+        }
+        
+    }
+    
+}

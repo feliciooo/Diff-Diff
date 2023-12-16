@@ -1,0 +1,44 @@
+import java.util.*;
+import java.io.*;
+
+public class RenturaTailRecur {
+
+    public static void main(String[] args) {
+        
+        System.out.printf("%-35s %-25s %-25s\n", "Artist", "Song", "Album" + "\n");
+        
+        String artistList[] = {"Frank Ocean", "Tyler, The Creator", "Playboi Carti", "Steve Lacy", "Travis Scott"};
+        
+        ArrayList <String> arList = new ArrayList<String>(Arrays.asList(artistList));   
+        
+        String songList[] = {"White Ferrari", "She", "FlatBed Freestyle", "Donchano", "Carousel"};
+        
+        ArrayList <String> soList = new ArrayList<String>(Arrays.asList(songList));
+        
+        String albumList[] = {"Frank Ocean / White Ferrari", "Tyler, The Creator / She", "Playboi Carti / FlatBed Freestyle", "Steve Lacy / Donchano", "Travis Scott / Carousel"};
+        
+        ArrayList <String> alList = new ArrayList<String>(Arrays.asList(albumList));
+        
+        Iterator <String> listAl = null;
+        Iterator <String> listAr = null;
+        Iterator <String> listSo = null;
+        
+        listAl = alList.listIterator();
+        listAr = arList.listIterator();
+        listSo = soList.listIterator();
+        
+        combine (alList.iterator(), arList.iterator(), soList.iterator());
+    
+    }
+    
+    public static void combine (Iterator <String> listAl, Iterator <String> listAr, Iterator <String> listSo){
+    
+        if ( listAr.hasNext() && listSo.hasNext() && listAl.hasNext() ){
+        
+            System.out.printf( "%-35s %-25s %-25s\n", listAr.next(), listSo.next(), listAl.next());
+            combine(listAl, listAr, listSo);
+        
+        }
+    
+    }
+}

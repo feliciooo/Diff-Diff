@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+
+public class Lab01_Rentura {
+
+    public static void main(String[] args) {
+        
+       Scanner sc = new Scanner(System.in);
+       
+       String lastName, firstName, depCode, idNum;
+       
+       double totalPayable;
+       
+       int rateUnit;
+       
+        System.out.println("Last Name of Student: ");
+        
+        lastName = sc.nextLine();
+        
+        System.out.println("First Name of Student: ");
+        
+        firstName = sc.nextLine();
+        
+        System.out.println("Department Code: ");
+        
+        depCode = sc.nextLine();
+        
+        System.out.println("ID Number: ");
+        
+        idNum = sc.nextLine();
+        
+        System.out.println("Rate per Unit: ");
+        
+        rateUnit = sc.nextInt();
+        
+        System.out.println("Student's Name: " + lastName + "," + firstName);
+        
+        System.out.println("Department Code: " + depCode);
+        
+        System.out.println("ID Number: " + idNum);
+        
+        System.out.println("Total Unit: 24");
+        
+        System.out.println("Total Payable: " + rateUnit * 24);
+    }
+}

@@ -1,0 +1,24 @@
+class BloodData {
+    
+   static String bloodType;
+   static String rhFactor;
+   
+   public BloodData(){
+   
+       bloodType = "O";
+       rhFactor = "+";
+       
+   } 
+   
+   public BloodData (String bTy, String rhF ){
+   
+       bloodType = bTy ;
+       rhFactor = rhF;
+   
+   }
+   
+   public void display(){
+   
+       System.out.println(bloodType + rhFactor + " is added to the blood bank.");
+   }
+}

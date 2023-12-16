@@ -1,0 +1,98 @@
+import java.util.Scanner;
+
+public class Rentura_CollegeList {
+
+    public static void main(String[] args) {
+        
+        Scanner jlr = new Scanner (System.in);
+        Person per = new Person();
+        Employee emp = new Employee();
+        Faculty fac = new Faculty();
+        Student stu = new Student();
+        
+        System.out.println("Press E for Employee, F for Faculty, or S for Student: ");
+        String user = jlr.nextLine();
+        
+        if(user.equals("E")){
+            
+            System.out.println("Press Enter after every input (Name, Contact Number, Salary, and Department): ");
+            
+            System.out.println("");
+            String nam = jlr.nextLine();
+            per.setName(nam);
+            
+            System.out.println("");
+            String conNum = jlr.nextLine();
+            per.setContactNum(conNum);
+            
+            System.out.println("");
+            double sala = jlr.nextDouble();
+            jlr.nextLine();
+            emp.setSalary(sala);
+            
+            System.out.println("");
+            String depaet = jlr.nextLine();
+            emp.setDepartment(depaet);
+            
+            per.perDisplay();
+            emp.empDisplay();
+            
+        }
+        
+        if(user.equals("F")){
+            
+            System.out.println("Press Y if the faculty member is regular/tenured or N if not: ");
+            String stat = jlr.nextLine();
+            fac.isRegular(stat);
+            
+            System.out.println("Press Enter after every input (Name, Contact Number, Salary, and Department):");
+            
+            System.out.println("");
+            String nam = jlr.nextLine();
+            per.setName(nam);
+            
+            System.out.println("");
+            String conNum = jlr.nextLine();
+            per.setContactNum(conNum);
+            
+            System.out.println("");
+            double sala = jlr.nextDouble();
+            jlr.nextLine();
+            emp.setSalary(sala);
+            
+            System.out.println("");
+            String depaet = jlr.nextLine();
+            emp.setDepartment(depaet);
+            
+            per.perDisplay();
+            emp.empDisplay();
+            fac.facDisplay();
+            
+        }
+        
+        if(user.equals("S")){
+        
+            System.out.println("Press Enter after every input (Name, Contact Number, Program, and Year Level (Number only):");
+            
+            System.out.println("");
+            String nam = jlr.nextLine();
+            per.setName(nam);
+            
+            System.out.println("");
+            String conNum = jlr.nextLine();
+            per.setContactNum(conNum);
+            
+            System.out.println("");
+            String prog = jlr.nextLine();
+            stu.setProgram(prog);
+            
+            System.out.println("");
+            int yearLev = jlr.nextInt();
+            stu.setYearLevel(yearLev);
+            
+            per.perDisplay();
+            stu.stuDisplay();
+            
+        }
+    }
+}

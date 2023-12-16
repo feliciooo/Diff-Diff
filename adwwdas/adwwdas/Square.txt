@@ -1,0 +1,46 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
+ */
+
+package com.mycompany.square;
+
+/**
+ *
+ * @author COMLAB504
+ */
+public class Square{
+    public void TestSquare(){
+        // i use the printf method because of the this "%"
+        int intV = square(4);
+        int doubleV = square(9);
+        
+        System.out.println("Sqaure of an integer is 4\n" + intV);
+        System.out.println("Square of an integer is 9\n" + doubleV);
+        
+        
+    }
+    
+    //print the first output on what i times multiple number 4
+    public int square(int intValue){
+        
+        return intValue * intValue;
+        
+        
+    }
+    //and then i multiple the doubleV on  to execute the SOP doubleV
+    public double square(double doubleValue){
+        return doubleValue*doubleValue;
+        
+    }
+    
+    //here i print the main method to show my code and what the output of my class
+    public static void main(String []args){
+        
+        Square sqr = new Square();
+        
+        //i call the public void varName into the mainclass
+        sqr.TestSquare();
+        
+    }
+}

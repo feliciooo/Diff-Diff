@@ -1,0 +1,14 @@
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Implements implements ActionListener {
+    
+    @Override
+    
+    public void actionPerformed(ActionEvent event){
+   
+        JOptionPane.showMessageDialog(null, "import java.awt.event.*;\n import javax.swing.*;\n import.java.awt.ActionListener;");
+ 
+    
+    }
+}

@@ -1,0 +1,113 @@
+import java.util.*;
+
+public class RunAmountDue {
+
+    public static void main(String[] args) {
+       
+        Scanner sc = new Scanner (System.in);
+        AmountDue ammount = new AmountDue();
+        
+        double amoUnt;
+        System.out.println("Press any of the following then enter values separated by spaces: ");
+        System.out.println("1 - Price only");
+        System.out.println("2 - Price and Quantity");
+        System.out.println("3 - Price, Quantity, and Discount Amount");
+        
+        int choCho = sc.nextInt();
+        
+        if (choCho == 1){
+        
+            System.out.println("");
+            amoUnt = sc.nextDouble();
+            ammount.addtaxRe();
+            System.out.println("Amount due is " + ammount.getamountDue());
+        }
+        
+        if (choCho == 2){
+        
+            amoUnt = sc.nextDouble();
+            ammount.addItemQuan();
+            System.out.println("Amount due is " + ammount.getamountDue());
+        }
+        
+        if (choCho == 3){
+        
+            amoUnt = sc.nextDouble();
+            ammount.addDisPrice();
+            System.out.println("Amount due is " + ammount.getamountDue());        
+        }
+    }
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+public class AmountDue {
+    
+    public static double itemPrice = 0; 
+    public static double itemQuan = 0;
+    public static double disPrice = 0;
+    public double taxRe = 12;
+    double itemTax = taxRe * 100;
+    //public double itemQuantity;
+    public double amountDue;
+    
+    static void setItemPrice (double newItemPrice){
+    
+        itemPrice = newItemPrice;
+    
+    }
+    
+    static double getItemPrice(){
+    
+        return itemPrice;
+    }
+    
+    static void setItemQuan(double newItemQuan){
+    
+        itemQuan = newItemQuan;
+    
+    }
+    
+    static double getItemQuan (){
+    
+        return itemQuan;
+    }
+    
+    double getamountDue(){
+    
+        return this.amountDue;
+    
+    }
+    
+    void addtaxRe(){
+    
+        double amountDue = itemPrice * itemTax ;
+        this.amountDue = amountDue + itemPrice;
+        
+    }
+    
+    
+    void addDisPrice(){
+   
+        double amountDue = itemPrice * itemTax;
+        //this.amountDue = this.amountDue + taxRe;
+        this.amountDue = amountDue - disPrice;
+    
+    }
+    
+    void addItemQuan(){
+    
+        double amountDue = (itemPrice * taxRe) * itemQuan;
+        this.amountDue = amountDue;
+    
+    }
+    
+    static void totalAmount(AmountDue dueAmount){
+    
+        System.out.println("Amount due is " + dueAmount.getamountDue());
+    
+    }
+    
+    
+}

@@ -1,0 +1,71 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class GUICredit implements ActionListener  {
+    
+    private JFrame frame;
+    private JTextField creditField;
+    private JLabel creditLabel;
+    private JButton verifyButton;
+    
+
+
+public GUICredit(){
+
+    creditField = new JTextField(6);
+    creditLabel = new JLabel("Valid or Invalid!");
+    verifyButton = new JButton("Verify CC Number");
+    frame = new JFrame();
+    
+    JPanel panel = new JPanel(new FlowLayout());
+    panel.add(creditField, BorderLayout.WEST);
+    panel.add(verifyButton, BorderLayout.EAST);
+    panel.add(creditLabel, BorderLayout.SOUTH);
+    
+    frame.setTitle("Credit Card Number Verifier");
+    frame.setSize(500, 500);
+    frame.add(panel);
+    frame.setVisible(true);
+    frame.pack();
+    
+    verifyButton.addActionListener((ActionListener) this);
+}
+
+ public boolean isValidCC (String text){
+    
+     int sum = 0;
+     
+     for (int i = text.length() - 1; i >= 0; i--){
+         
+         int digit = Integer.parseInt(text.substring(i, i + 1));
+            
+         if (i % 2 == 0){
+         
+             digit *= 2;
+         }
+     
+         sum += (digit / 10) + (digit % 100);
+     }  
+
+     return sum % 10 == 0 && text.startsWith("4");
+}
+ 
+ public void actionPerformed (ActionEvent event){
+    
+       String text = creditField.getText();
+       
+       if(isValidCC(text)){
+           
+           creditLabel.setText("Valid Number!");
+           
+       } else{
+           
+           creditLabel.setText("Invalid Number!");
+       }
+    }
+public static void main(String []args){
+ 
+     new GUICredit();
+ }
+}

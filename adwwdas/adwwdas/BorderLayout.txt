@@ -1,0 +1,40 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.BorderLayout;
+
+public class BorderLayout {
+
+    public static void main(String[] args) {
+        
+        JFrame myFrame = new JFrame("Border layout");
+        //myFrame.setLayout(new BorderLayout());
+        
+        myFrame.setSize(200, 200);
+        myFrame.setVisible(true);
+//        myFrame.setDefaultCloseOperation(myFrame.EXIT_ON_CLOSE);
+       
+        JPanel panel = new JPanel ();
+        panel.setLayout(new BorderLayout());
+        
+        JButton jB1 = new JButton("North");
+        jB1.setBackground(Color.red);
+        JButton jB2 = new JButton("South");
+        jB2.setBackground(Color.green);
+        JButton jB3 = new JButton("East");
+        jB3.setBackground(Color.blue);
+        JButton jB4 = new JButton("West");
+        jB4.setBackground(Color.yellow);
+        JButton jB5 = new JButton("Center");
+        jB5.setBackground(Color.orange);
+        
+        panel.add(jB1, BorderLayout.NORTH);
+        panel.add(jB2, BorderLayout.SOUTH);
+        panel.add(jB3, BorderLayout.EAST);
+        panel.add(jB4, BorderLayout.WEST);
+        panel.add(jB5, BorderLayout.CENTER);
+        
+        myFrame.add(panel);
+        myFrame.setDefaultCloseOperation(myFrame.EXIT_ON_CLOSE);
+        
+    }
+}

@@ -1,0 +1,28 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.GridLayout;
+
+public class GridLayout {
+
+    public static void main(String[] args) {
+        
+        JFrame frame = new JFrame("Grid Layout Cuh!!");
+        
+        JPanel myPanel = new JPanel(new GridLayout(2,3));
+        
+//      frame.setLayout(new GridLayout(2, 3));
+        for (int i = 1; i <= 6; i++){
+            
+        myPanel.add(new JButton ("Button " + i));
+        
+        }
+        
+        frame.add(myPanel);
+        frame.pack();
+        frame.setVisible(true);
+        
+        
+        
+        
+    }
+}

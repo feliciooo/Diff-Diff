@@ -1,0 +1,234 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Drawing.Text;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace OrganizationProfile
+{
+    public partial class Form1 : Form
+    {
+        private string _FullName;
+        private int _Age;
+        private long _ContactNo, _StudentNo;
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            FrmFileName frmFileName = new FrmFileName();
+            frmFileName.ShowDialog();
+
+            string Fullname = FullName(txt_Lastname.Text,txt_Firstname.Text, txt_MI.Text);
+            string Program = cmb_Program.Text;
+            string Gender = cmb_Gender.Text;
+            string Birthday = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+
+            int StudentNo = StudentNumber(txt_Studentno.Text);
+            int ContactNo = Contactno(txt_Contactno.Text);
+            int age = Age(txt_Age.Text);
+            this.Close();
+
+
+            try
+            {
+                using (FileStream fs = new FileStream("create_new_Example.txt", FileMode.CreateNew)) ;
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine($"A File Already Exist: {ex.Message} ");
+                Console.WriteLine(ex.Message);
+            }
+
+            string filename = FrmFileName.SetFileName;
+            if (File.Exists(filename))
+
+            {
+
+                throw new IOException("A file with a similar name already exists.");
+
+            }
+
+
+        string docPath =
+            Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath,
+            FrmFileName.SetFileName)))
+
+
+
+            {
+                outputFile.WriteLine("STUDENT NUMBER: " + StudentNo);
+                Console.WriteLine(StudentNo);
+
+                outputFile.WriteLine("FULL NAME: " + Fullname);
+                Console.WriteLine(Fullname);
+
+                outputFile.WriteLine("PROGRAM: " + Program);
+                Console.WriteLine(Program);
+
+                outputFile.WriteLine("GENDER: " + Gender);
+                Console.WriteLine(Gender);
+
+                outputFile.WriteLine("AGE: " + age);
+                Console.WriteLine(age);
+
+                outputFile.WriteLine("BIRTHDAY: " + Birthday);
+                Console.WriteLine(Birthday);
+
+                outputFile.WriteLine("CONTACT NUMBER: " + ContactNo);
+                Console.WriteLine(ContactNo);
+            }
+
+            frmConfirmation frm = new frmConfirmation();
+            frm.ShowDialog();
+
+        }
+
+        private string FullName(string text1, string text2, string text3)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(text1) || string.IsNullOrWhiteSpace(text2) || string.IsNullOrWhiteSpace(text3))
+                {
+                    throw new ArgumentException("Input strings cannot be blank.");
+                }
+
+                
+                string fullName = $"{text1} {text2} {text3}";
+                return fullName;
+            }
+            catch (ArgumentException)
+            {
+                Console.WriteLine("An ArgumentException occurred: ");
+                return "Input strings cannot be blank.";
+            }
+            catch (Exception )
+            {
+                Console.WriteLine("An exception occurred: ");
+                return "Error occurred while processing Full Name";
+            }
+        }
+
+        private int StudentNumber(string text)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(text))
+                {
+                    throw new ArgumentException("Input text cannot be blank.");
+                }
+
+                
+                int studentNumber = int.Parse(text);
+                return studentNumber;
+            }
+            catch (ArgumentException)
+            {
+                Console.WriteLine("An ArgumentException occurred: ");
+                return 0;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("An exception occurred: ");
+                return 0;
+            }
+        }
+
+        private int Contactno(string text)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(text))
+                {
+                    throw new ArgumentException("Input text cannot be blank.");
+                }
+
+                int contactNumber = int.Parse(text);
+                return contactNumber;
+            }
+            catch (ArgumentException)
+            {
+                Console.WriteLine("An ArgumentException occurred: ");
+                return 0;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("An exception occurred: ");
+                return 0; 
+            }
+        }
+
+        private int Age(string text)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(text))
+                {
+                    throw new ArgumentException("Input text cannot be blank.");
+                }
+
+                
+                int age = int.Parse(text);
+                return age;
+            }
+            catch (ArgumentException )
+            {
+                Console.WriteLine("An ArgumentException occurred: ");
+                return 0; 
+            }
+            catch (Exception )
+            {
+                Console.WriteLine("An exception occurred: ");
+                return 0; 
+            }
+        }
+
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+            string[] ListOfProgram = new string[]{
+
+                "BS Information Technology",
+
+                "BS Computer Science",
+
+                "BS Information Systems",
+
+                "BS in Accountancy",
+
+                "BS in Hospitality Management",
+
+                "BS in Tourism Management"};
+
+                        for (int i = 0; i < 6; i++)
+
+            {
+                cmb_Program.Items.Add(ListOfProgram[i].ToString());
+            }
+            string[] ListOfGender = new string[]{
+
+                "Female",
+
+                "Male",
+
+                };
+            for (int i = 0; i < 2; i++)
+            {
+                cmb_Gender.Items.Add(ListOfGender[i].ToString());
+            }
+        }
+
+    }
+}

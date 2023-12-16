@@ -1,0 +1,21 @@
+Rentura, John Lloyd D. 
+BSIT - 303
+Mr. James Ronald Banes
+Data Structures and Algorithms
+
+2. Based on the tree below, determine the parent nodes, leaf nodes, and siblings. Type your answers in Notepad. (15 points)
+
+Parent Nodes: 
+
+A - C - D - G 
+
+Leaf Nodes: 
+
+B - F - K - L - H - I - J
+
+Siblings: 
+
+B - D
+F - G
+H - I - J 
+K - L

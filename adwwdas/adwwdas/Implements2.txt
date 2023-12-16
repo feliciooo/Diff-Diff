@@ -1,0 +1,12 @@
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Implements2 implements ActionListener{
+    
+    @Override
+    
+    public void actionPerformed(ActionEvent event){
+    
+         JOptionPane.showMessageDialog(null, "Java Virtual Machine (JVM)\n Java Runtime Event (JRE)\n Java Development Kit (JDK)");
+    }   
+}

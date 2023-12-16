@@ -1,0 +1,43 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.BorderLayout;
+
+public class Telephone {
+
+    public static void main(String[] args) {
+        
+        JFrame myFrame = new JFrame();
+        
+        myFrame.setTitle("Telephone");
+        myFrame.setSize(300, 240);
+        myFrame.setVisible(true);
+        
+        myFrame.setLayout(new BorderLayout());
+        
+        JPanel panel = new JPanel (new GridLayout(4 ,3));
+        
+        for (int i = 1; i <= 9 ; i++){
+        
+         panel.add(new JButton(" " + i));
+    
+    }
+        
+        JButton jB1 = new JButton("#");
+        JButton jB2 = new JButton("0");
+        JButton jB3 = new JButton("*");
+        
+        panel.add(jB1, BorderLayout.WEST);
+        panel.add(jB2, BorderLayout.CENTER);
+        panel.add(jB3, BorderLayout.EAST);
+        
+        JPanel southPanel = new JPanel (new FlowLayout());
+        
+        southPanel.add(new Label (" Now Dial"));
+        southPanel.add(new JTextField (10));
+        
+        myFrame.add(southPanel, BorderLayout.SOUTH);
+        myFrame.add(panel);
+        myFrame.pack();
+        myFrame.setDefaultCloseOperation(myFrame.EXIT_ON_CLOSE);
+    }
+}

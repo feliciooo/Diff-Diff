@@ -1,0 +1,78 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class TaskPerf6 {
+    private static final String FILE_NAME = "C:\\Users\\user\\Desktop\\Rentura_John Lloyd\\minba\\records.txt";
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Select an option:");
+        System.out.println("1. Register");
+        System.out.println("2. Login");
+
+        int option = scanner.nextInt();
+        switch (option) {
+            case 1 -> register(scanner);
+            case 2 -> login(scanner);
+            default -> System.out.println("Invalid option selected.");
+        }
+    }
+
+    private static boolean isAlphanumeric(String s) {
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (!(Character.isLetterOrDigit(c))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static void register(Scanner scanner) {
+        System.out.println("Enter your desired username:");
+        String username = scanner.next();
+
+        System.out.println("Enter your desired password:");
+        String password = scanner.next();
+
+        if (!isAlphanumeric(username) || !isAlphanumeric(password)) {
+            System.out.println("Username and password should only contain alphanumeric characters.");
+            return;
+        }
+
+        try (FileWriter writer = new FileWriter(FILE_NAME, true)) {
+            writer.write(username + "," + password + "\n");
+            System.out.println("Registration successful.");
+        } catch (IOException e) {
+            System.out.println("An error occurred while saving the user details.");
+        }
+    }
+
+    private static void login(Scanner scanner) {
+        System.out.println("Enter your username:");
+        String username = scanner.next();
+
+        System.out.println("Enter your password:");
+        String password = scanner.next();
+
+        try (Scanner fileScanner = new Scanner(new File(FILE_NAME))) {
+            boolean found = false;
+            while (fileScanner.hasNextLine()) {
+                String line = fileScanner.nextLine();
+                String[] parts = line.split(",");
+                if (parts[0].equals(username) && parts[1].equals(password)) {
+                    System.out.println("Successfully logged in.");
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                System.out.println("Incorrect username or password.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while reading the user details.");
+        }
+    }
+}
