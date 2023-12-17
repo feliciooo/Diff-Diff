@@ -1,0 +1,22 @@
+public abstract class Bird extends Animal {
+    
+    @Override
+    void eat(){
+        
+        System.out.println("Birds love to eat seeds and ");
+        
+    }
+    
+    @Override
+    void sleep(){
+        
+        System.out.println("Sleeps for 10 - 12 hours a day.");
+        
+    }
+    
+    @Override
+    void makeSound(){
+        
+        System.out.println("Tweet Tweet");
+    }
+}

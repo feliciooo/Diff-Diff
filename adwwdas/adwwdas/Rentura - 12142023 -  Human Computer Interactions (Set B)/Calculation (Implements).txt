@@ -1,0 +1,31 @@
+import java.awt.event.*;  
+
+public class Calculation implements ActionListener {
+    
+    Rentura_MegaCalc rent;
+   
+   Calculation(Rentura_MegaCalc rent) {
+       this.rent = rent;
+   }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
+        try{
+            String first = rent.setA.getText();
+            double firstIn = Double.parseDouble(first);
+    
+            String second = rent.setB.getText();
+            double secondIn = Double.parseDouble(second);
+    
+            double answer = firstIn + secondIn;
+            String answerr = String.format("%f",answer);
+        
+            rent.answerArea.setText(answerr);
+    } 
+    catch(NumberFormatException ex){
+        
+        rent.answerArea.setText("Invalid Input/s");
+}
+    
+}
+}

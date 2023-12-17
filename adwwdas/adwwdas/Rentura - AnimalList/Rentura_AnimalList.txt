@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Rentura_RunAnimal {
+
+    public static void main(String[] args) {
+    
+        Scanner jlr = new Scanner (System.in);
+        
+        System.out.println("Choose an animal. Press B for Bird, C for Cat, D for Dog: ");
+        String userAnimal = jlr.nextLine();
+        
+        if("B".equalsIgnoreCase(userAnimal)){
+            
+            Bird bi = new Bird(){};
+            
+            bi.eat();
+            bi.sleep();
+            bi.makeSound();
+            
+        }
+        
+        if("C".equalsIgnoreCase(userAnimal)){
+        
+            Cat ca = new Cat(){};
+            
+            ca.eat();
+            ca.sleep();
+            ca.makeSound();
+            
+        }
+        
+        if("D".equalsIgnoreCase(userAnimal)){
+        
+            Dog d = new Dog(){};
+            
+            d.eat();
+            d.sleep();
+            d.makeSound();
+        }
+        
+    }
+}

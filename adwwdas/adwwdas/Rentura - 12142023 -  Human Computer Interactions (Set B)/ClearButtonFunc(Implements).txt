@@ -1,0 +1,25 @@
+import java.awt.event.*;  
+
+public class Clear implements ActionListener {
+    
+    Rentura_MegaCalc rent;
+   
+   Clear (Rentura_MegaCalc rent) {
+       this.rent = rent;
+   }
+    @Override
+    public void actionPerformed (ActionEvent e){
+        
+     if(!rent.answerArea.getText().trim().isEmpty()){
+         
+         rent.setA.setText("");
+         rent.setB.setText("");
+         rent.answerArea.setText("");
+         
+     }else{
+         rent.setA.setText("");
+         rent.setB.setText("");
+         
+     }
+    }
+}

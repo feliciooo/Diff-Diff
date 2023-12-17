@@ -1,0 +1,19 @@
+public class Dog {
+    
+    void eat(){
+        
+        System.out.println("Dogs love to eat meat and ");
+        
+    }
+    
+    void sleep(){
+        
+        System.out.println("sleeps for 12 - 14 hours a day.");
+        
+    }
+    
+    void makeSound(){
+        
+        System.out.println("Woof Woof");
+    }
+}

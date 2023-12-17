@@ -1,0 +1,59 @@
+import java.awt.event.*;  
+import javax.swing.*;    
+import java.awt.*;
+
+public class Rentura_MegaCalc {
+
+    public JFrame frame;
+    public JButton plusButton;
+    public JButton clearButton;
+    public JTextArea answerArea;
+    public JTextField setA;
+    public JTextField setB;
+    
+    public Rentura_MegaCalc(){
+    
+        frame = new JFrame();
+        frame.setSize(800, 600);
+        frame.setTitle("Mega Calc");
+        
+        clearButton = new JButton("Clear");
+        clearButton.setPreferredSize(new Dimension(100,20));
+        plusButton = new JButton("+"); 
+        plusButton.addActionListener(new Calculation(this));
+        clearButton.addActionListener(new Clear(this));
+        
+        answerArea = new JTextArea(5, 20);
+        setA = new JTextField(6);
+        setA.setPreferredSize(new Dimension(150,30));
+        setB = new JTextField(6);
+        setB.setPreferredSize(new Dimension (150,30));
+        
+        
+        JPanel contentPanel = new JPanel(new GridLayout(2, 1));
+        JPanel inputPanel = new JPanel(new BorderLayout());
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+
+        inputPanel.add(setA, BorderLayout.WEST);
+        inputPanel.add(plusButton, BorderLayout.CENTER);
+        inputPanel.add(setB, BorderLayout.EAST);
+        inputPanel.add(answerArea, BorderLayout.PAGE_END);
+
+        buttonPanel.add(clearButton);
+
+        contentPanel.add(inputPanel);
+        contentPanel.add(buttonPanel);
+
+        
+        frame.add(contentPanel);
+        frame.setVisible(true);
+        frame.pack();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        
+    }
+    
+    public static void main(String[] args) {
+        new Rentura_MegaCalc();
+    }
+}

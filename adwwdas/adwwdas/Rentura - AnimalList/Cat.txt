@@ -1,0 +1,23 @@
+public abstract class Cat extends Animal{
+    
+    @Override
+    void eat(){
+        
+        System.out.println("Cats love eat to eat fish and ");
+        
+    }
+    
+    @Override
+    void sleep(){
+        
+        System.out.println("sleeps for 12 - 16 hours a day.");
+        
+    }
+    
+    @Override
+    void makeSound(){
+        
+        System.out.println("Meow Meow");
+        
+    }
+}
