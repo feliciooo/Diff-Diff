@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Rentura_08TP {
+
+    public static void main(String[] args) {
+        
+        Scanner jlr = new Scanner (System.in);
+        InterfaceBody inBody = new InterfaceBody();
+        
+        System.out.print("Enter your name: ");
+        String userName = jlr.nextLine();
+        inBody.setPlayersName(userName);
+        
+        inBody.playerName();
+        inBody.levelDifficulty();
+        inBody.pushButton();
+    }
+}

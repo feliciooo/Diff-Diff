@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Monday {
+
+    public static void main(String[] args) {
+        
+        Mondayy mon = new Mondayy();
+        Scanner jlr = new Scanner (System.in);
+        
+        System.out.println("Enter time for alarm in this format (HH:MM): ");
+        String userTime = jlr.nextLine();
+        mon.setAlarm(userTime);
+        
+        mon.showAlarm();
+             
+    }
+}

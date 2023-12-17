@@ -1,0 +1,38 @@
+class InterfaceBody implements Interface {
+     
+    private String playersName;
+    private int levelsDifficulty;
+    private String playButton;
+    
+    public void setPlayersName(String playersName){
+        
+        this.playersName = playersName;
+        
+    }
+    
+    public String getPlayersName(){
+        
+        return playersName;
+        
+    }
+
+@Override
+    public void playerName(){
+        
+    }
+    
+    @Override
+    public void levelDifficulty(){
+        
+        System.out.println("Press 1 or 2 to select your game mode.");
+        System.out.println("1 - Story");
+        System.out.println("2 - Survival");
+        
+    }
+    
+    @Override
+    public void pushButton(){
+        
+        System.out.println("Press P to start playing, " + playersName + ".");
+    }
+}
