@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class RunQuad {
+
+    public static void main(String[] args) {
+        
+        Scanner jlr = new Scanner(System.in);
+        System.out.println("Select from the following: \n");
+        System.out.println("""
+                           R - Rectangle 
+                           S - Square 
+                           P - Parallelogram 
+                           H - Rhombus 
+                           T - Trapezoid 
+                           """);
+       
+        String userInput = jlr.nextLine();
+        
+        if("R".equals(userInput) || "r".equals(userInput)){
+            
+            //Quadrilateral quad = new Quadrilateral();
+            System.out.println("A rectangle: \n");
+            Rectangle rec = new Rectangle();
+            rec.showDescription();
+            
+        }
+        
+        if("S".equals(userInput) || "s".equals(userInput)){
+            
+            //Quadrilateral quad = new Quadrilateral();
+            System.out.println("A square: \n");
+            Square squ = new Square();
+            squ.showDescription();
+            
+        }
+        
+        if("P".equals(userInput) || "p".equals(userInput)){
+            
+            //Quadrilateral quad = new Quadrilateral();
+            System.out.println("A parallelogram: \n");
+            Parallelogram pal = new Parallelogram();
+            pal.showDescription();
+            
+        }
+        
+        if("H".equals(userInput) || "h".equals(userInput)){
+            
+            //Quadrilateral quad = new Quadrilateral();
+            System.out.println("A rhombus: \n");
+            Rhombus rhom = new Rhombus();
+            rhom.showDescription();
+            
+        }
+        
+        if("T".equals(userInput) || "t".equals(userInput)){
+            
+            //Quadrilateral quad = new Quadrilateral();
+            System.out.println("A trapezoid: \n");
+            Trapezoid trap = new Trapezoid();
+            trap.showDescription();
+            
+        }
+    }
+}

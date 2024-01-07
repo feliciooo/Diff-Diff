@@ -1,0 +1,34 @@
+public class BloodData_2 {
+    
+    private String bloodType;
+    private String bloodRhesus;
+    
+    public void setBloodType (String bloodType){
+        
+        this.bloodType = bloodType;
+        
+    }
+    
+    public String getBloodType(){
+        
+        return bloodType;
+        
+    }
+    
+    public void setBloodRhesus(String bloodRhesus){
+        
+        this.bloodRhesus = bloodRhesus;
+        
+    }
+    
+    public String getBloodRhesus (){
+        
+        return bloodRhesus;
+        
+    }
+    
+    public void bloodDisplay(){
+        
+        System.out.println(bloodType + bloodRhesus + " is added to the blood bank.");
+    }
+}

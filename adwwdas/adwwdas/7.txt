@@ -1,0 +1,6 @@
+public class Midterm {
+   public Midterm() {
+       super();
+       System.out.println("Exam has started.");
+   }
+}

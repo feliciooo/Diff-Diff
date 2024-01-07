@@ -1,0 +1,9 @@
+//This is the base class
+public class Quiz {
+
+}
+
+//This is the sub-class/derived class
+public class Essay extends Quiz {
+
+}

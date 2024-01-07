@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class RunBloodData_2 {
+
+    public static void main(String[] args) {
+        
+        Scanner jlr = new Scanner(System.in);
+        
+        BloodData_2 bd = new BloodData_2();
+        
+        System.out.println("Enter the blood type of the patient: ");
+        String bloodD = jlr.nextLine();
+        bd.setBloodType(bloodD);
+        
+        System.out.println("Enter the Rhesus factor (+ or -): ");
+        String bloodR = jlr.nextLine();
+        bd.setBloodRhesus(bloodR);
+        
+        bd.bloodDisplay();
+    }
+}

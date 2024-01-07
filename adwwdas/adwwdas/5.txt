@@ -1,0 +1,8 @@
+public class Exam{
+
+
+}
+
+public class Midterm extends Exam {
+
+}

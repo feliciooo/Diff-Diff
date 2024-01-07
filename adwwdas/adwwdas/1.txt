@@ -1,0 +1,11 @@
+public class Sample{
+    
+    private String message;
+    
+    public void setMessage(String goodLuck){
+    goodLuck = "Good Luck";
+    this.message = goodLuck;
+    
+   
+    }
+}

@@ -1,0 +1,6 @@
+public class Exam{
+	
+  public Exam (String period, String level){
+
+}
+}

@@ -1,0 +1,4 @@
+public boolean isFinished{
+
+    return status;
+}

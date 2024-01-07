@@ -1,0 +1,12 @@
+public class Exam{
+
+
+}
+
+public class Midterm extends Exam {
+
+}
+
+public class Essay extends Midterm {
+
+}
